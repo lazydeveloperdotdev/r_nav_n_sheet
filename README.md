@@ -12,6 +12,10 @@ Animated, modern and highly customisable bottom navigation bar for flutter
 - Animated, modern looking and highly customizable bottom navigation bar
 - Custom bottom sheet with center docked action button to toggle the bottom sheet
 
+![DEMO1](demo/rnns_normal.gif)
+![DEMO2](demo/rnns_gradient.gif)
+![DEMO3](demo/rnns_tabs.gif)
+
 ## Getting started
 
 - Add ```r_nav_n_sheet: <latest_version>``` to ```pubspec.yaml```
