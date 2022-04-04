@@ -1,8 +1,14 @@
 part of '../r_nav_n_sheet.dart';
 
+/// [BottomNavigationBarItem] (bottom navigation bar items) for [RNavNSheet]
 class RNavItem {
+  /// Icon when item is not selected
   final IconData icon;
+
+  /// Icon when item is  selected
   final IconData? activeIcon;
+
+  /// Label of the item
   final String label;
 
   const RNavItem({

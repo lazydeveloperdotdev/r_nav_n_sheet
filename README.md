@@ -68,3 +68,36 @@ Widget build(BuildContext context) {
 
 For full implementation,
 see [example](https://github.com/rajyadavnp/r_nav_n_sheet/tree/main/example)
+
+### RNavItem
+
+| Attributes | Type | Description |
+| ---------- | ---- | ----------- |
+| ```icon``` | ```IconData``` | icon when item is not selected |
+| ```activeIcon``` | ```IconData?``` | icon when item is selected, ```icon``` is used if ```activeIcon``` not passed |
+| ```label``` | ```String``` | label for the item |
+
+### RNavNSheet
+
+| Attributes | Type | Description |
+| ---------- | ---- | ----------- |
+| ```items``` | ```List<RNavItem>``` | list of bottom navigation items |
+| ```initialSelectedIndex``` | ```int?``` | index of default selected item |
+| ```sheet``` | ```Widget?``` | bottom sheet to be displayed on dock icon click |
+| ```sheetOpenIcon``` | ```IconData?``` | toggle button icon when sheet is open |
+| ```sheetCloseIcon``` | ```IconData?``` | toggle button icon when sheet is closed |
+| ```sheetOpenIconBoxColor``` | ```Color?``` | toggle button background color when sheet is open |
+| ```sheetCloseIconBoxColor``` | ```Color?``` | toggle button background color when sheet is closed |
+| ```sheetOpenIconColor``` | ```Color?``` | toggle button foreground color when sheet is open |
+| ```sheetCloseIconColor``` | ```Color?``` | toggle button foreground color when sheet is closed |
+| ```sheetIconRotateAngle``` | ```double?``` | angle (in radians) to rotate toggle button when sheet is open |
+| ```sheetToggleDecoration``` | ```BoxDecoration?``` | decoration for toggle button |
+| ```borderColors``` | ```List<Color>?``` | list of colors for border over nav bar (gradient from left to right) |
+| ```backgroundColor``` | ```Color?``` | background color of nav bar |
+| ```backgroundGradient``` | ```Gradient?``` | background gradient of nav bar |
+| ```selectedItemColor``` | ```Color?``` | color of selected nav item (overrides gradient) |
+| ```unselectedItemColor``` | ```Color?``` | color of unselected nav item |
+| ```selectedItemGradient``` | ```Gradient?``` | gradient of selected nav item |
+| ```unselectedItemGradient``` | ```Gradient?``` | gradient of unselected nav item |
+| ```onTap``` | ```void Function(int)?``` | function callback that returns index of selected item |
+| ```onSheetToggle``` | ```void Function(bool)?``` | function callback that returns  ```true``` if sheet is open and ```false``` if sheet is closed |

@@ -1,5 +1,6 @@
 part of '../r_nav_n_sheet.dart';
 
+/// Clip background of [RNavNSheet] when sheet is disabled
 class _BottomClipperPlain extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
@@ -17,6 +18,7 @@ class _BottomClipperPlain extends CustomClipper<Path> {
   }
 }
 
+/// Clip background of [RNavNSheet] when sheet is enabled
 class _BottomClipper extends CustomClipper<Path> {
   final double value;
 

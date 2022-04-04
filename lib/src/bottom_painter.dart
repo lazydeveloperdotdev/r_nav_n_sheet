@@ -1,5 +1,6 @@
 part of '../r_nav_n_sheet.dart';
 
+/// Top glowing border painter for  [RNavNSheet] when sheet is disabled
 class _BottomPainterPlain extends CustomPainter {
   final List<Color> colors;
 
@@ -31,6 +32,7 @@ class _BottomPainterPlain extends CustomPainter {
   }
 }
 
+/// Top glowing border painter for  [RNavNSheet] when sheet is enabled
 class _BottomPainter extends CustomPainter {
   final List<Color> colors;
   final double value;

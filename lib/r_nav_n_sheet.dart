@@ -12,27 +12,67 @@ part 'src/r_nav_item.dart';
 
 part 'src/sheet_toggle_button.dart';
 
+/// Animated, modern and highly customisable [BottomNavigationBar]
 class RNavNSheet extends StatefulWidget {
+  /// List of [RNavItem] (bottom navigation items)
   final List<RNavItem> items;
+
+  /// [Function] callback that returns index of selected [RNavItem]
   final void Function(int index)? onTap;
+
+  /// Index of default selected item
   final int? initialSelectedIndex;
+
+  /// Bottom sheet to be displayed on dock icon click
   final Widget? sheet;
+
+  /// Toggle button icon when sheet is open
   final IconData? sheetOpenIcon;
+
+  /// Toggle button foreground [Color] when sheet is open
   final Color? sheetOpenIconBoxColor;
+
+  /// Toggle button foreground [Color] when sheet is open
   final Color? sheetOpenIconColor;
+
+  /// Toggle button background [Color] when sheet is closed
   final Color? sheetCloseIconBoxColor;
+
+  /// Toggle button foreground [Color] when sheet is closed
   final Color? sheetCloseIconColor;
+
+  /// Angle (in radians) to rotate toggle button when sheet is open
   final double? sheetIconRotateAngle;
+
+  /// Toggle button icon when sheet is closed
   final IconData? sheetCloseIcon;
+
+  /// [Decoration] for toggle button
   final BoxDecoration? sheetToggleDecoration;
+
+  /// [List] of [Color] for border over [RNavNSheet] ([Gradient] from left to right)
   final List<Color>? borderColors;
+
+  /// Background [Color] of [RNavNSheet]
   final Color? backgroundColor;
 
+  /// Background [Gradient] of [RNavNSheet]
   final Gradient? backgroundGradient;
+
+  /// [Color] of selected nav item
   final Color? selectedItemColor;
+
+  /// [Color] of unselected nav item
   final Color? unselectedItemColor;
+
+  /// [Gradient] of selected [RNavItem]
   final Gradient? selectedItemGradient;
+
+  /// [Gradient] of unselected [RNavItem]
   final Gradient? unselectedItemGradient;
+
+  /// [Function] callback that returns ```true``` if sheet is open
+  /// and ```false``` if sheet is closed
   final void Function(bool value)? onSheetToggle;
 
   const RNavNSheet({
