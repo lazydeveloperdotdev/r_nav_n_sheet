@@ -2,6 +2,7 @@ name: r_nav_n_sheet
 description: Animated modern and highly customisable bottom navigation bar for flutter.
 version: 0.0.1
 homepage: https://github.com/rajyadavnp/r_nav_n_sheet
+repository: https://github.com/rajyadavnp/r_nav_n_sheet
 
 environment:
   sdk: ">=2.16.1 <3.0.0"

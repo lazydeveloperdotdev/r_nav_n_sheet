@@ -1,4 +1,4 @@
-## RNavNSheet
+# RNavNSheet
 
 [![Pub](https://img.shields.io/pub/v/r_nav_n_sheet.svg)](https://pub.dartlang.org/packages/r_nav_n_sheet)
 [![License](https://img.shields.io/badge/licence-Apache2-green.svg)](https://github.com/rajyadavnp/r_nav_n_sheet/blob/master/LICENSE)
@@ -11,10 +11,9 @@ Animated, modern and highly customisable bottom navigation bar for flutter
 
 - Animated, modern looking and highly customizable bottom navigation bar
 - Custom bottom sheet with center docked action button to toggle the bottom sheet
-
-![DEMO1](demo/rnns_normal.gif)
-![DEMO2](demo/rnns_gradient.gif)
-![DEMO3](demo/rnns_tabs.gif)
+| DEMO 1 | DEMO 2 | DEMO 3 |
+|--|--|--|
+|![DEMO1](demo/rnns_normal.gif)|![DEMO2](demo/rnns_gradient.gif)|![DEMO3](demo/rnns_tabs.gif)|
 
 ## Getting started
 
