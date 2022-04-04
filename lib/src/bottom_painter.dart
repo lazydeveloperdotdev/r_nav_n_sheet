@@ -1,9 +1,9 @@
 part of '../r_nav_n_sheet.dart';
 
-class BottomPainterPlain extends CustomPainter {
+class _BottomPainterPlain extends CustomPainter {
   final List<Color> colors;
 
-  BottomPainterPlain(this.colors);
+  _BottomPainterPlain(this.colors);
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -31,11 +31,11 @@ class BottomPainterPlain extends CustomPainter {
   }
 }
 
-class BottomPainter extends CustomPainter {
+class _BottomPainter extends CustomPainter {
   final List<Color> colors;
   final double value;
 
-  BottomPainter(this.colors, {this.value = 10});
+  _BottomPainter(this.colors, {this.value = 10});
 
   @override
   void paint(Canvas canvas, Size size) {

@@ -1,6 +1,6 @@
 part of '../r_nav_n_sheet.dart';
 
-class BottomClipperPlain extends CustomClipper<Path> {
+class _BottomClipperPlain extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path = Path();
@@ -17,10 +17,10 @@ class BottomClipperPlain extends CustomClipper<Path> {
   }
 }
 
-class BottomClipper extends CustomClipper<Path> {
+class _BottomClipper extends CustomClipper<Path> {
   final double value;
 
-  BottomClipper({this.value = 10});
+  _BottomClipper({this.value = 10});
 
   @override
   Path getClip(Size size) {

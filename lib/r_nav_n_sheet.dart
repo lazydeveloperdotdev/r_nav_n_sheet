@@ -200,15 +200,15 @@ class _RNavNSheetState extends State<RNavNSheet>
     var bgColor = widget.backgroundColor ?? theme.canvasColor;
     var gradientColors =
         widget.borderColors ?? [bgColor, theme.iconTheme.color!, bgColor];
-    CustomPainter painter = BottomPainterPlain(gradientColors);
-    CustomClipper<Path> clipper = BottomClipperPlain();
+    CustomPainter painter = _BottomPainterPlain(gradientColors);
+    CustomClipper<Path> clipper = _BottomClipperPlain();
 
     if (widget.sheet != null) {
-      painter = BottomPainter(
+      painter = _BottomPainter(
         gradientColors,
         value: max(10, _animValue * 30),
       );
-      clipper = BottomClipper(
+      clipper = _BottomClipper(
         value: max(10, _animValue * 30),
       );
     }
