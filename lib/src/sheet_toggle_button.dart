@@ -1,5 +1,6 @@
 part of '../r_nav_n_sheet.dart';
 
+/// Toggle button for the bottom sheet
 class _SheetToggleButton extends StatelessWidget {
   final BoxDecoration? decoration;
   final Color? backgroundColor;

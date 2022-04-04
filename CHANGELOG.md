@@ -82,3 +82,7 @@ see [example](https://github.com/rajyadavnp/r_nav_n_sheet/tree/main/example)
 ## 0.0.4
 
 * No changes
+
+## 1.0.0
+
+**1. Code documentation**
