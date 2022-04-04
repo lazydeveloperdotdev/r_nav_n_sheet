@@ -1,7 +1,7 @@
 ## RNavNSheet
 
 [![Pub](https://img.shields.io/pub/v/r_nav_n_sheet.svg)](https://pub.dartlang.org/packages/r_nav_n_sheet)
-[![License](https://img.shields.io/badge/licence-MIT-orange.svg)](https://github.com/rajyadavnp/r_nav_n_sheet/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/licence-Apache2-green.svg)](https://github.com/rajyadavnp/r_nav_n_sheet/blob/master/LICENSE)
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rajyadavnp/r_nav_n_sheet.svg)](https://github.com/rajyadavnp/r_nav_n_sheet)
 [![GitHub stars](https://img.shields.io/github/stars/rajyadavnp/r_nav_n_sheet.svg?style=social)](https://github.com/rajyadavnp/r_nav_n_sheet)
 
