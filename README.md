@@ -66,4 +66,5 @@ Widget build(BuildContext context) {
 
 ## Additional information
 
-For full implementation, see example
+For full implementation, see
+![example](https://github.com/rajyadavnp/r_nav_n_sheet/tree/main/demo)
