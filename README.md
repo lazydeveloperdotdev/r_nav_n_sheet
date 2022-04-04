@@ -1,39 +1,60 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+## RNavNSheet
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Animated, modern and highly customisable bottom navigation bar for flutter
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Animated, modern looking and highly customizable bottom navigation bar
+- Custom bottom sheet with center docked action button to toggle the bottom sheet
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+- Add ```r_nav_n_sheet: <latest_version>``` to ```pubspec.yaml```
+- Run ```flutter pub get``` in the terminal in the project directory or select ```pub get``` from
+  within   ```pubspec.yaml``` file
+- Add import statement,
+
+```dart
+import 'package:r_nav_n_sheet/r_nav_n_sheet.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+
+@override
+Widget build(BuildContext context) {
+  return Scaffold(
+    //Other scaffold properties
+      bottomNavigationBar: RNavNSheet(
+        sheet: MySheet(), //Replace MySheet with your own bottom sheet
+        items: const [
+          RNavItem(
+            icon: Icons.home_outlined,
+            activeIcon: Icons.home,
+            label: "Home",
+          ),
+          RNavItem(
+            icon: Icons.search_outlined,
+            activeIcon: Icons.search,
+            label: "Search",
+          ),
+          RNavItem(
+            icon: Icons.shopping_cart_outlined,
+            activeIcon: Icons.shopping_cart,
+            label: "Cart",
+          ),
+          RNavItem(
+            icon: Icons.person,
+            activeIcon: Icons.person_outline,
+            label: "Account",
+          ),
+        ],
+      )
+  );
+}
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+For full implementation, see example

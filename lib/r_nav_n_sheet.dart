@@ -10,15 +10,21 @@ part 'src/bottom_painter.dart';
 
 part 'src/r_nav_item.dart';
 
+part 'src/sheet_toggle_button.dart';
+
 class RNavNSheet extends StatefulWidget {
   final List<RNavItem> items;
   final void Function(int index)? onTap;
   final int? initialSelectedIndex;
   final Widget? sheet;
   final IconData? sheetOpenIcon;
+  final Color? sheetOpenIconBoxColor;
+  final Color? sheetOpenIconColor;
+  final Color? sheetCloseIconBoxColor;
+  final Color? sheetCloseIconColor;
   final double? sheetIconRotateAngle;
   final IconData? sheetCloseIcon;
-  final Widget? sheetToggleChild;
+  final BoxDecoration? sheetToggleDecoration;
   final List<Color>? borderColors;
   final Color? backgroundColor;
 
@@ -38,7 +44,7 @@ class RNavNSheet extends StatefulWidget {
     this.borderColors,
     this.backgroundColor,
     this.backgroundGradient,
-    this.sheetToggleChild,
+    this.sheetToggleDecoration,
     this.sheetOpenIcon,
     this.sheetCloseIcon,
     this.onSheetToggle,
@@ -47,6 +53,10 @@ class RNavNSheet extends StatefulWidget {
     this.unselectedItemColor,
     this.selectedItemGradient,
     this.unselectedItemGradient,
+    this.sheetOpenIconBoxColor,
+    this.sheetCloseIconBoxColor,
+    this.sheetOpenIconColor,
+    this.sheetCloseIconColor,
   })  : assert(items.length >= 2 && items.length <= 5,
             "There must be at least 2 and at most 5 items!"),
         assert(
@@ -156,20 +166,25 @@ class _RNavNSheetState extends State<RNavNSheet>
     }
 
     var openIcon = widget.sheetOpenIcon ?? Icons.add;
+    var iconBg = _sheetOpen
+        ? widget.sheetOpenIconBoxColor
+        : widget.sheetCloseIconBoxColor ?? widget.sheetOpenIconBoxColor;
+    var iconFg = _sheetOpen
+        ? widget.sheetOpenIconColor
+        : widget.sheetCloseIconColor ?? widget.sheetOpenIconColor;
     var fab = Expanded(
       child: Padding(
         padding: const EdgeInsets.only(top: 15),
         child: Transform.rotate(
           angle:
               _animValue * (pi / 180) * (widget.sheetIconRotateAngle ?? 45.0),
-          child: widget.sheetToggleChild ??
-              FloatingActionButton(
-                onPressed: () => _showBottomSheet(),
-                child: Icon(
-                  _sheetOpen ? widget.sheetCloseIcon ?? openIcon : openIcon,
-                  color: theme.iconTheme.color,
-                ),
-              ),
+          child: _SheetToggleButton(
+            onTap: () => _showBottomSheet(),
+            backgroundColor: iconBg,
+            icon: _sheetOpen ? widget.sheetCloseIcon ?? openIcon : openIcon,
+            foregroundColor: iconFg,
+            decoration: widget.sheetToggleDecoration,
+          ),
         ),
       ),
     );
@@ -207,12 +222,13 @@ class _RNavNSheetState extends State<RNavNSheet>
             child: Container(),
           ),
           ClipPath(
-            child: Container(
+            child: AnimatedContainer(
               decoration: BoxDecoration(
                 color: bgColor,
                 gradient: widget.backgroundGradient,
               ),
               height: 96,
+              duration: const Duration(milliseconds: 300),
               child: Material(
                 color: Colors.transparent,
                 child: Row(
