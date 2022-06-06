@@ -27,8 +27,8 @@ class _BottomPainterPlain extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
+  bool shouldRepaint(covariant _BottomPainterPlain oldDelegate) {
+    return oldDelegate.colors != colors;
   }
 }
 
@@ -50,8 +50,7 @@ class _BottomPainter extends CustomPainter {
       30,
     );
     path.quadraticBezierTo(size.width / 2, 0, size.width / 2 + 36, 30);
-    path.quadraticBezierTo(
-        (size.width / 1.5) + 36, value * 3, size.width, (value * 3) + 5);
+    path.quadraticBezierTo((size.width / 1.5) + 36, value * 3, size.width, (value * 3) + 5);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);
     path.close();
@@ -68,7 +67,7 @@ class _BottomPainter extends CustomPainter {
   }
 
   @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) {
-    return false;
+  bool shouldRepaint(covariant _BottomPainter oldDelegate) {
+    return oldDelegate.colors != colors || oldDelegate.value != value;
   }
 }

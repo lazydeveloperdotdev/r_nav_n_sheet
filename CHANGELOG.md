@@ -68,8 +68,7 @@ Widget build(BuildContext context) {
 
 ## Additional information
 
-For full implementation,
-see [example](https://github.com/rajyadavnp/r_nav_n_sheet/tree/main/example)
+For full implementation, see [example](https://github.com/rajyadavnp/r_nav_n_sheet/tree/main/example)
 
 ## 0.0.2
 
@@ -86,3 +85,7 @@ see [example](https://github.com/rajyadavnp/r_nav_n_sheet/tree/main/example)
 ## 1.0.0
 
 **1. Code documentation**
+
+## 1.0.1
+
+**1. Repaint bug fixes**

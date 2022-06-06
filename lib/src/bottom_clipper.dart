@@ -13,8 +13,8 @@ class _BottomClipperPlain extends CustomClipper<Path> {
   }
 
   @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return true;
+  bool shouldReclip(covariant _BottomClipperPlain oldClipper) {
+    return false;
   }
 }
 
@@ -35,15 +35,14 @@ class _BottomClipper extends CustomClipper<Path> {
       30,
     );
     path.quadraticBezierTo(size.width / 2, 0, size.width / 2 + 36, 30);
-    path.quadraticBezierTo(
-        (size.width / 1.5) + 36, value * 3, size.width, (value * 3) + 5);
+    path.quadraticBezierTo((size.width / 1.5) + 36, value * 3, size.width, (value * 3) + 5);
     path.lineTo(size.width, size.height);
     path.lineTo(0, size.height);
     return path;
   }
 
   @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    return true;
+  bool shouldReclip(covariant _BottomClipper oldClipper) {
+    return oldClipper.value != value;
   }
 }

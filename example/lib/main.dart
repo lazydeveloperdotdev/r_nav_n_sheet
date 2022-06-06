@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:r_nav_n_sheet/r_nav_n_sheet.dart';
+import 'package:r_nav_n_sheet_example/home.dart';
 import 'package:remixicon/remixicon.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     var iconTheme = IconThemeData(color: white);
     var bgColor = const Color(0xff282c38);
     var bgColorLight = const Color(0xff232732);
-    var accent = Color(0xff00B4AA);
+    var accent = Colors.pink;
     var error = Colors.red;
 
     return MaterialApp(
@@ -89,84 +90,47 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       extendBody: true,
-      body: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(
-              [
-                Remix.home_6_fill,
-                Remix.search_2_fill,
-                Remix.shopping_cart_2_fill,
-                Remix.user_3_fill
-              ][_index],
-              color: theme.colorScheme.secondary,
-              size: 48,
-            ),
-            const SizedBox(height: 10),
-            Text(
-              ["Home", "Search", "Cart", "Account"][_index],
-              textScaleFactor: 2.0,
-              style: TextStyle(
-                color: theme.colorScheme.secondary,
-                fontWeight: FontWeight.bold,
+      body: _index == 0
+          ? const Home()
+          : Center(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Icon(
+                    [Remix.home_6_fill, Remix.search_2_fill, Remix.shopping_cart_2_fill, Remix.user_3_fill][_index],
+                    color: theme.colorScheme.secondary,
+                    size: 48,
+                  ),
+                  const SizedBox(height: 10),
+                  Text(
+                    ["Home", "Search", "Cart", "Account"][_index],
+                    textScaleFactor: 2.0,
+                    style: TextStyle(
+                      color: theme.colorScheme.secondary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ],
               ),
             ),
-          ],
-        ),
-      ),
       bottomNavigationBar: RNavNSheet(
         onTap: (index) {
           setState(() {
             _index = index;
           });
+          Future.delayed(const Duration(seconds: 1), () {
+            setState(() {
+              _index = index;
+            });
+          });
         },
-        backgroundGradient: _open
-            ? const LinearGradient(
-                colors: [
-                  Colors.indigo,
-                  Colors.red,
-                  Colors.amber,
-                ],
-              )
-            : const LinearGradient(
-                colors: [
-                  Colors.indigo,
-                  Colors.teal,
-                  Colors.red,
-                ],
-              ),
-        borderColors: const [
-          Colors.indigo,
-          Colors.amber,
-          Colors.red,
-        ],
-        unselectedItemGradient: LinearGradient(
-          colors: [
-            Colors.white,
-            theme.colorScheme.secondary,
-            Colors.white10,
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-        ),
-        selectedItemGradient: LinearGradient(
-          colors: [
-            Colors.white,
-            theme.colorScheme.secondary.withOpacity(0.3),
-            Colors.white,
-          ],
-          begin: Alignment.bottomCenter,
-          end: Alignment.topCenter,
-        ),
         initialSelectedIndex: _index,
         sheet: Sheet(),
         sheetOpenIcon: Remix.menu_4_line,
         sheetCloseIcon: Remix.add_line,
-        sheetOpenIconBoxColor: Colors.white70,
         sheetCloseIconBoxColor: Colors.white,
-        sheetCloseIconColor: Colors.teal,
-        sheetOpenIconColor: Colors.red,
+        sheetCloseIconColor: theme.scaffoldBackgroundColor,
+        sheetOpenIconColor: Colors.white,
         onSheetToggle: (v) {
           setState(() {
             _open = v;
@@ -292,8 +256,7 @@ class Sheet extends StatelessWidget {
                               widthFactor: 0.33,
                               child: Container(
                                 decoration: BoxDecoration(
-                                    color:
-                                        (icon["c"] as Color).withOpacity(0.2),
+                                    color: (icon["c"] as Color).withOpacity(0.2),
                                     borderRadius: BorderRadius.circular(10)),
                                 margin: const EdgeInsets.all(5),
                                 padding: const EdgeInsets.all(15),
@@ -317,7 +280,7 @@ class Sheet extends StatelessWidget {
                             ),
                         ],
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 20),
                       Padding(
                         padding: const EdgeInsets.all(10.0),
                         child: Text(
