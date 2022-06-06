@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:r_nav_n_sheet/r_nav_n_sheet.dart';
-import 'package:r_nav_n_sheet_example/home.dart';
 import 'package:remixicon/remixicon.dart';
 
 void main() {
@@ -90,29 +89,27 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       extendBody: true,
-      body: _index == 0
-          ? const Home()
-          : Center(
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    [Remix.home_6_fill, Remix.search_2_fill, Remix.shopping_cart_2_fill, Remix.user_3_fill][_index],
-                    color: theme.colorScheme.secondary,
-                    size: 48,
-                  ),
-                  const SizedBox(height: 10),
-                  Text(
-                    ["Home", "Search", "Cart", "Account"][_index],
-                    textScaleFactor: 2.0,
-                    style: TextStyle(
-                      color: theme.colorScheme.secondary,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ],
+      body: Center(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              [Remix.home_6_fill, Remix.search_2_fill, Remix.shopping_cart_2_fill, Remix.user_3_fill][_index],
+              color: theme.colorScheme.secondary,
+              size: 48,
+            ),
+            const SizedBox(height: 10),
+            Text(
+              ["Home", "Search", "Cart", "Account"][_index],
+              textScaleFactor: 2.0,
+              style: TextStyle(
+                color: theme.colorScheme.secondary,
+                fontWeight: FontWeight.bold,
               ),
             ),
+          ],
+        ),
+      ),
       bottomNavigationBar: RNavNSheet(
         onTap: (index) {
           setState(() {

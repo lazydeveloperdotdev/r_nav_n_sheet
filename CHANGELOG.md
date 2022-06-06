@@ -89,3 +89,7 @@ For full implementation, see [example](https://github.com/rajyadavnp/r_nav_n_she
 ## 1.0.1
 
 **1. Repaint bug fixes**
+
+## 1.0.2
+
+**1. Hide [ModalBarrier](https://api.flutter.dev/flutter/widgets/ModalBarrier-class.html) on bottomSheet close
