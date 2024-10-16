@@ -54,8 +54,8 @@ Widget build(BuildContext context) {
             label: "Cart",
           ),
           RNavItem(
-            icon: Icons.person,
-            activeIcon: Icons.person_outline,
+            icon: Icons.person_outline,
+            activeIcon: Icons.person,
             label: "Account",
           ),
         ],
