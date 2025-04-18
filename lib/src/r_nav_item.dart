@@ -11,9 +11,12 @@ class RNavItem {
   /// Label of the item
   final String label;
 
+  final bool? selected;
+
   const RNavItem({
     required this.icon,
     required this.label,
+    this.selected,
     this.activeIcon,
   });
 }
@@ -56,8 +59,8 @@ class _RNavItem extends StatelessWidget {
             LinearGradient(
               colors: [
                 theme.colorScheme.secondary,
-                theme.colorScheme.secondary.withOpacity(0.9),
-                theme.colorScheme.secondary.withOpacity(0.1),
+                theme.colorScheme.secondary.withValues(alpha: 0.9),
+                theme.colorScheme.secondary.withValues(alpha: 0.1),
                 theme.iconTheme.color!,
               ],
               begin: Alignment.topCenter,
