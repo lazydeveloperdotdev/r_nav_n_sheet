@@ -7,7 +7,7 @@
 [![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/rajyadavnp/r_nav_n_sheet.svg)](https://github.com/rajyadavnp/r_nav_n_sheet)
 [![GitHub stars](https://img.shields.io/github/stars/rajyadavnp/r_nav_n_sheet.svg?style=social)](https://github.com/rajyadavnp/r_nav_n_sheet)
 
-Animated, modern and highly customisable bottom navigation bar for flutter
+Animated, modern and highly customizable bottom navigation bar for flutter
 
 ## Features
 
@@ -93,3 +93,11 @@ For full implementation, see [example](https://github.com/rajyadavnp/r_nav_n_she
 ## 1.0.2
 
 **1. Hide [ModalBarrier](https://api.flutter.dev/flutter/widgets/ModalBarrier-class.html) on bottomSheet close
+
+## 1.1.1
+
+** Added `bool? selected` property to the [RNavItem](https://pub.dev/documentation/r_nav_n_sheet/latest/r_nav_n_sheet/RNavItem-class.html) class, as an alternate and/or compliment to the existing `int? initialSelectedIndex` property on the [RNavNSheet](https://pub.dev/documentation/r_nav_n_sheet/latest/r_nav_n_sheet/RNavNSheet-class.html) class.**
+
+Minor adjustment to code to better follow best practices suggested by linter.
+
+Updated code to remove some deprecated methods.

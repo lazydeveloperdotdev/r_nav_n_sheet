@@ -17,12 +17,13 @@ class MyApp extends StatelessWidget {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
     );
-    var white = Colors.white;
-    var iconTheme = IconThemeData(color: white);
+    const white = Colors.white;
+    const accent = Colors.pink;
+    const error = Colors.red;
+
+    var iconTheme = const IconThemeData(color: white);
     var bgColor = const Color(0xff282c38);
     var bgColorLight = const Color(0xff232732);
-    var accent = Colors.pink;
-    var error = Colors.red;
 
     return MaterialApp(
       title: 'RNavNSheet',
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           elevation: 0.0,
         ),
         iconTheme: iconTheme,
-        colorScheme: ColorScheme(
+        colorScheme: const ColorScheme(
           brightness: Brightness.dark,
           primary: accent,
           onPrimary: white,
@@ -64,7 +65,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _index = 0;
+  int _index = 3;
 
   @override
   void initState() {
@@ -103,7 +104,7 @@ class _HomePageState extends State<HomePage> {
             const SizedBox(height: 10),
             Text(
               ["Home", "Search", "Cart", "Account"][_index],
-              textScaleFactor: 2.0,
+              textScaler: const TextScaler.linear(2.0),
               style: TextStyle(
                 color: theme.colorScheme.secondary,
                 fontWeight: FontWeight.bold,
@@ -135,6 +136,7 @@ class _HomePageState extends State<HomePage> {
         },
         items: const [
           RNavItem(
+            // selected: true,
             activeIcon: Remix.home_6_fill,
             icon: Remix.home_6_line,
             label: "Home",
@@ -253,8 +255,8 @@ class Sheet extends StatelessWidget {
                               widthFactor: 0.33,
                               child: Container(
                                 decoration: BoxDecoration(
-                                    color:
-                                        (icon["c"] as Color).withOpacity(0.2),
+                                    color: (icon["c"] as Color)
+                                        .withValues(alpha: 0.2),
                                     borderRadius: BorderRadius.circular(10)),
                                 margin: const EdgeInsets.all(5),
                                 padding: const EdgeInsets.all(15),

@@ -12,7 +12,7 @@ part 'src/r_nav_item.dart';
 
 part 'src/sheet_toggle_button.dart';
 
-/// Animated, modern and highly customisable [BottomNavigationBar]
+/// Animated, modern and highly customizable [BottomNavigationBar]
 class RNavNSheet extends StatefulWidget {
   /// List of [RNavItem] (bottom navigation items)
   final List<RNavItem> items;
@@ -177,13 +177,13 @@ class _RNavNSheetState extends State<RNavNSheet>
 
   @override
   Widget build(BuildContext context) {
-    List<RNavItem> _items = widget.items;
-    var theme = Theme.of(context);
-    var items = <Widget>[];
+    final items = widget.items;
+    final theme = Theme.of(context);
+    final rNavItems = <Widget>[];
 
-    for (var item in _items) {
-      var i = _items.indexOf(item);
-      items.add(Expanded(
+    for (var item in items) {
+      var i = items.indexOf(item);
+      rNavItems.add(Expanded(
         child: _RNavItem(
           icon: item.icon,
           activeIcon: item.activeIcon,
@@ -194,7 +194,8 @@ class _RNavNSheetState extends State<RNavNSheet>
           selectedItemGradient: widget.selectedItemGradient,
           unselectedItemGradient: widget.unselectedItemGradient,
           padding: EdgeInsets.only(top: padding[i]),
-          selected: _selectedIndex == i,
+          selected:
+              item.selected ?? false ? item.selected! : _selectedIndex == i,
           onTap: () {
             if (widget.onTap != null) {
               widget.onTap!(i);
@@ -232,10 +233,10 @@ class _RNavNSheetState extends State<RNavNSheet>
     );
 
     if (widget.sheet != null) {
-      if (_items.length == 2) {
-        items.insert(1, fab);
-      } else if (_items.length == 4) {
-        items.insert(2, fab);
+      if (items.length == 2) {
+        rNavItems.insert(1, fab);
+      } else if (items.length == 4) {
+        rNavItems.insert(2, fab);
       }
     }
 
@@ -275,7 +276,7 @@ class _RNavNSheetState extends State<RNavNSheet>
               child: Material(
                 color: Colors.transparent,
                 child: Row(
-                  children: items,
+                  children: rNavItems,
                 ),
               ),
             ),
